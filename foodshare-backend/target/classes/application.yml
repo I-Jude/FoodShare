@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: foodshare-backend
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/foodshare_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# JWT Configuration
+jwt:
+  secret: foodshare_secret_key_very_long_and_secure_for_jwt_token_generation_2026
+  expiration: 86400000
+
+# Logging
+logging:
+  level:
+    root: INFO
+    com.foodshare: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+# File Upload
+upload:
+  path: uploads

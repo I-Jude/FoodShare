@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --fs-bg: #0b1220;
+  --fs-surface-1: #121b2b;
+  --fs-surface-2: #1a2436;
+  --fs-surface-3: #223049;
+  --fs-border: #2d3b56;
+
+  --fs-text-1: #e8eef8;
+  --fs-text-2: #b6c1d6;
+  --fs-text-3: #90a0bb;
+
+  --fs-primary: #23a7a0;
+  --fs-primary-strong: #1b8b86;
+  --fs-accent: #f97316;
+  --fs-success: #22c55e;
+  --fs-warning: #f59e0b;
+  --fs-danger: #f04343;
+
+  --fs-focus: rgba(35, 167, 160, 0.35);
+  --fs-glow: 0 14px 30px rgba(15, 22, 36, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(35, 167, 160, 0.16), transparent 45%),
+    radial-gradient(circle at 100% 0%, rgba(249, 115, 22, 0.1), transparent 35%),
+    var(--fs-bg);
+  color: var(--fs-text-1);
+}
+
+a {
+  color: var(--fs-primary);
+}
+
+a:hover {
+  color: #44c6be;
+}
+
+.app-shell {
+  min-height: 100vh;
+  color: var(--fs-text-1);
+}
+
+.navbar-darkglass {
+  background: linear-gradient(120deg, rgba(18, 27, 43, 0.95), rgba(26, 36, 54, 0.95));
+  border-bottom: 1px solid rgba(35, 167, 160, 0.45);
+  box-shadow: var(--fs-glow);
+  backdrop-filter: blur(8px);
+}
+
+.navbar .nav-link {
+  margin: 0 2px;
+  border-radius: 8px;
+}
+
+.navbar .nav-link:hover {
+  background-color: rgba(35, 167, 160, 0.12);
+}
+
+.card,
+.modal-content,
+.dropdown-menu {
+  background-color: var(--fs-surface-2);
+  border: 1px solid var(--fs-border);
+  color: var(--fs-text-1);
+  box-shadow: var(--fs-glow);
+}
+
+.card-header,
+.card-footer,
+.table thead th {
+  background-color: var(--fs-surface-3) !important;
+  border-color: var(--fs-border) !important;
+  color: var(--fs-text-1);
+}
+
+.table {
+  --bs-table-bg: var(--fs-surface-2);
+  --bs-table-striped-bg: rgba(144, 160, 187, 0.08);
+  --bs-table-hover-bg: rgba(35, 167, 160, 0.12);
+  --bs-table-border-color: var(--fs-border);
+  color: var(--fs-text-1);
+}
+
+.form-control,
+.form-select {
+  background-color: var(--fs-surface-1);
+  color: var(--fs-text-1);
+  border-color: var(--fs-border);
+}
+
+.form-control::placeholder {
+  color: var(--fs-text-3);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--fs-surface-1);
+  color: var(--fs-text-1);
+  border-color: var(--fs-primary);
+  box-shadow: 0 0 0 0.2rem var(--fs-focus);
+}
+
+.form-label,
+small,
+.text-muted {
+  color: var(--fs-text-2) !important;
+}
+
+.alert {
+  border-color: var(--fs-border);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--fs-primary);
+  --bs-btn-border-color: var(--fs-primary);
+  --bs-btn-hover-bg: var(--fs-primary-strong);
+  --bs-btn-hover-border-color: var(--fs-primary-strong);
+  --bs-btn-active-bg: var(--fs-primary-strong);
+  --bs-btn-active-border-color: var(--fs-primary-strong);
+}
+
+.btn {
+  padding: 0.52rem 0.95rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--fs-primary);
+  --bs-btn-border-color: var(--fs-primary);
+  --bs-btn-hover-bg: var(--fs-primary);
+  --bs-btn-hover-border-color: var(--fs-primary);
+}
+
+.bg-info,
+.badge.bg-info {
+  background-color: rgba(35, 167, 160, 0.18) !important;
+  color: #a6f2ec !important;
+}
+
+.badge.bg-success {
+  background-color: rgba(34, 197, 94, 0.22) !important;
+}
+
+.badge.bg-warning {
+  background-color: rgba(245, 158, 11, 0.22) !important;
+}
+
+.badge.bg-danger {
+  background-color: rgba(240, 67, 67, 0.24) !important;
+}
+
+.home-hero {
+  background: linear-gradient(140deg, rgba(35, 167, 160, 0.95), rgba(249, 115, 22, 0.85));
+  border-radius: 18px;
+  box-shadow: var(--fs-glow);
+}
+
+.surface-container {
+  background: transparent;
+}
+
+.section-title {
+  color: var(--fs-text-1);
+  font-weight: 800;
+}
+
+.image-fallback {
+  background: linear-gradient(140deg, rgba(144, 160, 187, 0.08), rgba(144, 160, 187, 0.22));
+  color: var(--fs-text-3);
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    padding: 2rem !important;
+  }
+}
