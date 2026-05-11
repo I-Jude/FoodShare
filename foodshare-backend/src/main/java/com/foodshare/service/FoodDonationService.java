@@ -35,6 +35,7 @@ public class FoodDonationService {
         donation.setAvailableFrom(donationDTO.getAvailableFrom());
         donation.setAvailableUntil(donationDTO.getAvailableUntil());
         donation.setPrice(donationDTO.getPrice() != null ? donationDTO.getPrice() : 0.0);
+        donation.setPaymentType(donationDTO.getPaymentType());
         donation.setStatus(FoodDonation.DonationStatus.AVAILABLE);
 
         FoodDonation savedDonation = donationRepository.save(donation);
@@ -92,6 +93,12 @@ public class FoodDonationService {
         }
         if (donationDTO.getAvailableUntil() != null) {
             donation.setAvailableUntil(donationDTO.getAvailableUntil());
+        }
+        if (donationDTO.getPaymentType() != null) {
+            donation.setPaymentType(donationDTO.getPaymentType());
+        }
+        if (donationDTO.getPrice() != null) {
+            donation.setPrice(donationDTO.getPrice());
         }
 
         FoodDonation updatedDonation = donationRepository.save(donation);

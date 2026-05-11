@@ -116,8 +116,19 @@ const ReceiverBrowse = () => {
                     <div><strong>📦 Qty:</strong> {donation.quantity} {donation.unit}</div>
                     <div><strong>📍 Location:</strong> {donation.pickupLocation}</div>
                     <div><strong>⏰ Until:</strong> {new Date(donation.availableUntil).toLocaleString()}</div>
-                    {donation.price > 0 && <div><strong>💰 Price:</strong> ₹{donation.price}</div>}
+                    {donation.price > 0 && <div><strong>💰 Price:</strong> ₹{donation.price} ({donation.paymentType})</div>}
                     {donation.price === 0 && <div className="text-success"><strong>✅ FREE</strong></div>}
+                    <div className="mt-2">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(donation.pickupLocation)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-xs btn-link p-0 text-info"
+                        style={{ fontSize: '11px', textDecoration: 'none' }}
+                      >
+                        📍 View on Google Maps
+                      </a>
+                    </div>
                   </Card.Text>
                 </Card.Body>
                 <Card.Footer style={{ borderColor: COLORS.border }}>

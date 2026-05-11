@@ -48,6 +48,8 @@ public class FoodDonationDTO {
 
     private String imagePath;
 
+    private String paymentType;
+
     private String status;
 
     private Long donorId;
@@ -71,6 +73,7 @@ public class FoodDonationDTO {
         dto.setAvailableUntil(donation.getAvailableUntil());
         dto.setPrice(donation.getPrice());
         dto.setImagePath(donation.getImagePath());
+        dto.setPaymentType(donation.getPaymentType());
         dto.setStatus(donation.getStatus().name());
         dto.setDonorId(donation.getDonor().getId());
         dto.setDonorName(donation.getDonor().getFullName());

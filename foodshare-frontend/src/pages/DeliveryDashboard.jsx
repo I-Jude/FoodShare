@@ -70,6 +70,16 @@ const DeliveryDashboard = () => {
                       <div className="mb-2"><strong>Pickup Address:</strong></div>
                       <Card className="bg-light p-3 border-start border-primary border-4">
                         {order.pickupLocation}
+                        <div className="mt-2 text-end">
+                          <a
+                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(order.pickupLocation)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-sm btn-link text-primary p-0 text-decoration-none"
+                          >
+                            📍 Open Pickup Map
+                          </a>
+                        </div>
                       </Card>
                       <div className="mt-2"><strong>Donor:</strong> {order.donorName} ({order.donorPhone})</div>
                     </Col>
@@ -80,6 +90,16 @@ const DeliveryDashboard = () => {
                       <div className="mb-2"><strong>Delivery Address:</strong></div>
                       <Card className="bg-light p-3 border-start border-success border-4">
                         {order.deliveryAddress}
+                        <div className="mt-2 text-end">
+                          <a
+                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(order.deliveryAddress)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-sm btn-link text-success p-0 text-decoration-none"
+                          >
+                            🏠 Open Delivery Map
+                          </a>
+                        </div>
                       </Card>
                     </Col>
                   </Row>

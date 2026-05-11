@@ -21,6 +21,7 @@ const emptyDonation = {
   availableFrom: '',
   availableUntil: '',
   price: 0,
+  paymentType: 'CASH',
 };
 
 const toDateTimeLocal = (value) => {
@@ -70,6 +71,7 @@ const CreateDonation = ({ isEdit = false }) => {
           availableFrom: toDateTimeLocal(donation.availableFrom),
           availableUntil: toDateTimeLocal(donation.availableUntil),
           price: donation.price ?? 0,
+          paymentType: donation.paymentType || 'CASH',
         });
         if (donation.imagePath) {
           setImagePreview(getImageUrl(donation.imagePath));
@@ -296,6 +298,21 @@ const CreateDonation = ({ isEdit = false }) => {
                 onChange={handleChange}
                 style={{ borderColor: COLORS.border }}
               />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label style={{ fontWeight: '600', color: COLORS.textPrimary }}>Payment Type</Form.Label>
+              <Form.Select
+                name="paymentType"
+                value={formData.paymentType}
+                onChange={handleChange}
+                style={{ borderColor: COLORS.border }}
+              >
+                <option value="CASH">Cash</option>
+                <option value="UPI">UPI / Digital</option>
+                <option value="CARD">Card</option>
+                <option value="OTHER">Other</option>
+              </Form.Select>
             </Form.Group>
 
             <Form.Group className="mb-4">

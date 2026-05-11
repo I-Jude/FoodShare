@@ -244,12 +244,27 @@ const Home = () => {
                       <div style={{ marginBottom: '8px' }}>
                         <strong>⏰ Until:</strong> {new Date(donation.availableUntil).toLocaleString()}
                       </div>
-                      {donation.price > 0 && <div style={{ marginBottom: '8px' }}><strong>💰 Price:</strong> ₹{donation.price}</div>}
+                      {donation.price > 0 && (
+                        <div style={{ marginBottom: '8px' }}>
+                          <strong>💰 Price:</strong> ₹{donation.price} ({donation.paymentType})
+                        </div>
+                      )}
                       {donation.price === 0 && (
                         <div style={{ marginBottom: '8px', color: COLORS.success, fontWeight: '600' }}>
                           ✅ FREE
                         </div>
                       )}
+                      <div style={{ marginTop: '10px' }}>
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(donation.pickupLocation)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-sm btn-outline-info w-100"
+                          style={{ fontSize: '12px' }}
+                        >
+                          🗺️ View on External Map
+                        </a>
+                      </div>
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer style={{ borderColor: COLORS.border }}>

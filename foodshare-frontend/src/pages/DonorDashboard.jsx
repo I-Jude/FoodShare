@@ -60,7 +60,18 @@ const DonorDashboard = () => {
                     <div><strong>Quantity:</strong> {donation.quantity} {donation.unit}</div>
                     <div><strong>Location:</strong> {donation.pickupLocation}</div>
                     <div><strong>Status:</strong> <Badge bg="info">{donation.status}</Badge></div>
+                    <div><strong>Payment:</strong> <Badge bg="secondary">{donation.paymentType || 'CASH'}</Badge></div>
                     <div><strong>Available Until:</strong> {new Date(donation.availableUntil).toLocaleString()}</div>
+                    <div className="mt-2">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(donation.pickupLocation)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="small text-info text-decoration-none"
+                      >
+                        🔗 Open Pickup Map
+                      </a>
+                    </div>
                   </Card.Text>
                 </Card.Body>
                 <Card.Footer>

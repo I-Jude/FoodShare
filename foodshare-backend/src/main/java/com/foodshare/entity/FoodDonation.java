@@ -57,6 +57,9 @@ public class FoodDonation {
     @Column(name = "image_path")
     private String imagePath;
 
+    @Column(name = "payment_type")
+    private String paymentType;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private DonationStatus status = DonationStatus.AVAILABLE;
