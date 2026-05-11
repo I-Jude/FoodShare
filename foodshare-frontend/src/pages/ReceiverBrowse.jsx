@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Button, Form, Spinner, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import donationService from '../services/donationService';
+import { getImageUrl } from '../utils/imageUtils';
 
 const COLORS = {
   textPrimary: 'var(--fs-text-1)',
@@ -103,7 +104,7 @@ const ReceiverBrowse = () => {
                 {donation.imagePath && (
                   <Card.Img
                     variant="top"
-                    src={donation.imagePath}
+                    src={getImageUrl(donation.imagePath)}
                     alt="Food"
                     style={{ height: '200px', objectFit: 'cover' }}
                   />

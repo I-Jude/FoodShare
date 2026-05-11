@@ -1,4 +1,5 @@
 com\foodshare\exception\ValidationException.class
+com\foodshare\config\WebConfig.class
 com\foodshare\service\UserService.class
 com\foodshare\entity\FoodRequest$RequestStatus.class
 com\foodshare\repository\FoodDonationRepository.class
@@ -14,6 +15,7 @@ com\foodshare\dto\FoodDonationDTO.class
 com\foodshare\security\JwtAuthenticationFilter.class
 com\foodshare\security\JwtTokenProvider.class
 com\foodshare\controller\FoodDonationController.class
+com\foodshare\controller\DeliveryController.class
 com\foodshare\service\FileUploadService.class
 com\foodshare\controller\FoodRequestController.class
 com\foodshare\repository\FoodRequestRepository.class

@@ -60,6 +60,6 @@ public class User {
     }
 
     public enum UserRole {
-        ADMIN, DONOR, RECEIVER
+        ADMIN, DONOR, RECEIVER, DELIVERY_PARTNER
     }
 }

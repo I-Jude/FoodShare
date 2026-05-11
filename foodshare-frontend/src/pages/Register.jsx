@@ -123,6 +123,7 @@ const Register = () => {
               <Form.Select name="role" value={formData.role} onChange={handleChange}>
                 <option value="RECEIVER">Receiver (NGO/Person)</option>
                 <option value="DONOR">Donor (Marriage Hall/Caterer)</option>
+                <option value="DELIVERY_PARTNER">Delivery Partner</option>
               </Form.Select>
             </Form.Group>
 

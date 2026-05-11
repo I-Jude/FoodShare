@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button, Form, Spinner, Alert } from 'react-b
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import donationService from '../services/donationService';
+import { getImageUrl } from '../utils/imageUtils';
 
 // Professional Color Palette
 const COLORS = {
@@ -207,7 +208,7 @@ const Home = () => {
                   {donation.imagePath && (
                     <Card.Img
                       variant="top"
-                      src={donation.imagePath}
+                      src={getImageUrl(donation.imagePath)}
                       alt="Food"
                       style={{ height: '200px', objectFit: 'cover' }}
                     />

@@ -46,8 +46,8 @@ public class FileUploadService {
             Path filePath = Paths.get(uploadDir, fileName);
 
             file.transferTo(filePath);
-
-            return uploadDir + File.separator + fileName;
+            String savedPath = uploadDir + "/" + fileName;
+            return savedPath.replace("\\", "/");
         } catch (IOException e) {
             throw new ValidationException("Failed to upload file: " + e.getMessage());
         }

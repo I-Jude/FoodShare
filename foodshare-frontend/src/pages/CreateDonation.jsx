@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Form, Button, Alert, Card, Row, Col } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import donationService from '../services/donationService';
+import { getImageUrl } from '../utils/imageUtils';
 
 const COLORS = {
   primary: 'var(--fs-primary)',
@@ -71,7 +72,7 @@ const CreateDonation = ({ isEdit = false }) => {
           price: donation.price ?? 0,
         });
         if (donation.imagePath) {
-          setImagePreview(donation.imagePath);
+          setImagePreview(getImageUrl(donation.imagePath));
         }
       } catch (err) {
         setError(err.response?.data?.message || 'Failed to load donation for editing');

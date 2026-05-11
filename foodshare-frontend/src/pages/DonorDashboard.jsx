@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button, Spinner, Alert, Badge } from 'react-
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import donationService from '../services/donationService';
+import { getImageUrl } from '../utils/imageUtils';
 
 const DonorDashboard = () => {
   const [donations, setDonations] = useState([]);
@@ -44,6 +45,14 @@ const DonorDashboard = () => {
           {donations.map((donation) => (
             <Col md={6} lg={4} className="mb-4" key={donation.id}>
               <Card className="h-100 shadow-sm">
+                {donation.imagePath && (
+                  <Card.Img
+                    variant="top"
+                    src={getImageUrl(donation.imagePath)}
+                    alt="Food"
+                    style={{ height: '160px', objectFit: 'cover' }}
+                  />
+                )}
                 <Card.Body>
                   <Card.Title>{donation.eventName}</Card.Title>
                   <Card.Text>

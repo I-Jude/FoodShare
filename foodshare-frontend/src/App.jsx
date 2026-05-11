@@ -15,6 +15,7 @@ import ReceiverMyRequests from './pages/ReceiverMyRequests';
 import AdminDashboard from './pages/AdminDashboard';
 import CreateDonation from './pages/CreateDonation';
 import RequestFood from './pages/RequestFood';
+import DeliveryDashboard from './pages/DeliveryDashboard';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/theme.css';
@@ -99,6 +100,12 @@ const Navigation = () => {
                 {user?.role === 'ADMIN' && (
                   <Nav.Link as={Link} to="/admin/dashboard" style={navLinkStyle}>
                     Admin
+                  </Nav.Link>
+                )}
+
+                {user?.role === 'DELIVERY_PARTNER' && (
+                  <Nav.Link as={Link} to="/delivery/dashboard" style={navLinkStyle}>
+                    Deliveries
                   </Nav.Link>
                 )}
 
@@ -201,6 +208,16 @@ const AppContent = () => {
           element={
             <ProtectedRoute requiredRole="ADMIN">
               <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Delivery Partner Routes */}
+        <Route
+          path="/delivery/dashboard"
+          element={
+            <ProtectedRoute requiredRole="DELIVERY_PARTNER">
+              <DeliveryDashboard />
             </ProtectedRoute>
           }
         />
